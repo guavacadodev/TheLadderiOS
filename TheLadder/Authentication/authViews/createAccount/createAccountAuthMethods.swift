@@ -14,11 +14,8 @@ struct createAccountAuthMethods: View {
                     // --- Phone Create Method --- //
                     VStack {
                         NavigationLink {
-                            NavigationView {
-                                createAccountView()
-                                phoneAuthView()
-                            }
-                            .navigationBarBackButtonHidden(true)
+                            createAccountView()
+                            phoneAuthView()
                         } label: {
                             ZStack {
                                 Circle()
@@ -32,7 +29,7 @@ struct createAccountAuthMethods: View {
                                     .foregroundStyle(Color.black)
                             }
                             .scaleEffect(CGSize(width: 0.8, height: 0.8))
-                    }
+                        }
                     }
                     // --- Email Create Method --- //
                     VStack {
