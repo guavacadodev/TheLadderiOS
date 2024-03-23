@@ -27,7 +27,6 @@
 		1CB3602F2B9E7F3E00F30C49 /* FacebookCore in Frameworks */ = {isa = PBXBuildFile; productRef = 1CB3602E2B9E7F3E00F30C49 /* FacebookCore */; };
 		1CB360312B9E7F3E00F30C49 /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 1CB360302B9E7F3E00F30C49 /* FacebookLogin */; };
 		1CB360332B9E7F3E00F30C49 /* FacebookShare in Frameworks */ = {isa = PBXBuildFile; productRef = 1CB360322B9E7F3E00F30C49 /* FacebookShare */; };
-		1CB360352B9EAD3E00F30C49 /* loginAccountAuthMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB360342B9EAD3E00F30C49 /* loginAccountAuthMethods.swift */; };
 		1CB360392B9EAFD300F30C49 /* loginAccountEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB360382B9EAFD300F30C49 /* loginAccountEmailView.swift */; };
 		1CB3603B2B9EB57F00F30C49 /* loginAccountFacebookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB3603A2B9EB57F00F30C49 /* loginAccountFacebookView.swift */; };
 		1CB3603D2B9EB6A100F30C49 /* loginAccountGoogleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB3603C2B9EB6A100F30C49 /* loginAccountGoogleView.swift */; };
@@ -35,7 +34,7 @@
 		1CB4697B2B9FEF17007E9C59 /* InputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB4697A2B9FEF17007E9C59 /* InputField.swift */; };
 		1CB469812BA0EED2007E9C59 /* createAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB469802BA0EED2007E9C59 /* createAccountView.swift */; };
 		1CB469832BA0EEE2007E9C59 /* emailAuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB469822BA0EEE2007E9C59 /* emailAuthView.swift */; };
-		1CB4698A2BA0F900007E9C59 /* createAccountAuthMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB469892BA0F900007E9C59 /* createAccountAuthMethods.swift */; };
+		1CB4698A2BA0F900007E9C59 /* AuthMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB469892BA0F900007E9C59 /* AuthMethods.swift */; };
 		1CB469932BA13560007E9C59 /* LottieSwipeLeftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB469922BA13560007E9C59 /* LottieSwipeLeftView.swift */; };
 		1CB469992BA147FD007E9C59 /* swipeleft.json in Resources */ = {isa = PBXBuildFile; fileRef = 1CB469982BA147FD007E9C59 /* swipeleft.json */; };
 		1CB4699B2BA24E4D007E9C59 /* inputBirthday.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB4699A2BA24E4D007E9C59 /* inputBirthday.swift */; };
@@ -68,7 +67,6 @@
 		1CB35FF82B9E719D00F30C49 /* LadderAnimation1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LadderAnimation1.swift; sourceTree = "<group>"; };
 		1CB360052B9E755200F30C49 /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 		1CB360072B9E75B200F30C49 /* Information.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Information.plist; sourceTree = "<group>"; };
-		1CB360342B9EAD3E00F30C49 /* loginAccountAuthMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginAccountAuthMethods.swift; sourceTree = "<group>"; };
 		1CB360382B9EAFD300F30C49 /* loginAccountEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginAccountEmailView.swift; sourceTree = "<group>"; };
 		1CB3603A2B9EB57F00F30C49 /* loginAccountFacebookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginAccountFacebookView.swift; sourceTree = "<group>"; };
 		1CB3603C2B9EB6A100F30C49 /* loginAccountGoogleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginAccountGoogleView.swift; sourceTree = "<group>"; };
@@ -76,7 +74,7 @@
 		1CB4697A2B9FEF17007E9C59 /* InputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputField.swift; sourceTree = "<group>"; };
 		1CB469802BA0EED2007E9C59 /* createAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = createAccountView.swift; sourceTree = "<group>"; };
 		1CB469822BA0EEE2007E9C59 /* emailAuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = emailAuthView.swift; sourceTree = "<group>"; };
-		1CB469892BA0F900007E9C59 /* createAccountAuthMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = createAccountAuthMethods.swift; sourceTree = "<group>"; };
+		1CB469892BA0F900007E9C59 /* AuthMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthMethods.swift; sourceTree = "<group>"; };
 		1CB469922BA13560007E9C59 /* LottieSwipeLeftView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieSwipeLeftView.swift; sourceTree = "<group>"; };
 		1CB469982BA147FD007E9C59 /* swipeleft.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = swipeleft.json; sourceTree = "<group>"; };
 		1CB4699A2BA24E4D007E9C59 /* inputBirthday.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = inputBirthday.swift; sourceTree = "<group>"; };
@@ -270,7 +268,7 @@
 			isa = PBXGroup;
 			children = (
 				1CB469802BA0EED2007E9C59 /* createAccountView.swift */,
-				1CB469892BA0F900007E9C59 /* createAccountAuthMethods.swift */,
+				1CB469892BA0F900007E9C59 /* AuthMethods.swift */,
 			);
 			path = createAccount;
 			sourceTree = "<group>";
@@ -279,7 +277,6 @@
 			isa = PBXGroup;
 			children = (
 				1CB360382B9EAFD300F30C49 /* loginAccountEmailView.swift */,
-				1CB360342B9EAD3E00F30C49 /* loginAccountAuthMethods.swift */,
 			);
 			path = loginAccount;
 			sourceTree = "<group>";
@@ -387,7 +384,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1CB360352B9EAD3E00F30C49 /* loginAccountAuthMethods.swift in Sources */,
 				1CB4697B2B9FEF17007E9C59 /* InputField.swift in Sources */,
 				1CB4699B2BA24E4D007E9C59 /* inputBirthday.swift in Sources */,
 				1CB360392B9EAFD300F30C49 /* loginAccountEmailView.swift in Sources */,
@@ -401,7 +397,7 @@
 				1CB3603F2B9EB6AC00F30C49 /* loginAccountXView.swift in Sources */,
 				1C1AC62E2B9EC0F700367399 /* WelcomeView.swift in Sources */,
 				1CB3603D2B9EB6A100F30C49 /* loginAccountGoogleView.swift in Sources */,
-				1CB4698A2BA0F900007E9C59 /* createAccountAuthMethods.swift in Sources */,
+				1CB4698A2BA0F900007E9C59 /* AuthMethods.swift in Sources */,
 				1CB35FF92B9E719D00F30C49 /* LadderAnimation1.swift in Sources */,
 				1CB469812BA0EED2007E9C59 /* createAccountView.swift in Sources */,
 				1CB469B62BA3A1B7007E9C59 /* AuthViewModel.swift in Sources */,
