@@ -10,12 +10,13 @@ import SwiftUI
 struct createAccountView: View {
     @Environment(\.presentationMode) var presentationMode
     @State private var shouldPlayAnimation = true
+    @StateObject var viewModel = AuthViewModel()
     var body: some View {
         TabView {
-            inputUsername(shouldPlayAnimation: $shouldPlayAnimation)
-            inputPassword(shouldPlayAnimation: $shouldPlayAnimation)
-            inputPasswordConfirm(shouldPlayAnimation: $shouldPlayAnimation)
-            inputBirthday(shouldPlayAnimation: $shouldPlayAnimation)
+            inputUsername(viewModel: viewModel, shouldPlayAnimation: $shouldPlayAnimation)
+            inputPassword(shouldPlayAnimation: $shouldPlayAnimation, viewModel: viewModel)
+            inputPasswordConfirm(viewModel: viewModel, shouldPlayAnimation: $shouldPlayAnimation)
+            inputBirthday(shouldPlayAnimation: $shouldPlayAnimation, viewModel: viewModel)
         }
         .tabViewStyle(PageTabViewStyle())
         .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))

@@ -15,7 +15,7 @@ struct createAccountAuthMethods: View {
                     VStack {
                         NavigationLink {
                             createAccountView()
-                            phoneAuthView()
+                            //phoneAuthView()
                         } label: {
                             ZStack {
                                 Circle()

@@ -14,6 +14,14 @@ import FacebookLogin
 
 @MainActor
 class AuthViewModel: ObservableObject {
+    @Published var username: String = ""
+    @Published var password: String = ""
+    @Published var confirmPassword: String = ""
+    @Published var selectedMonth: String = "January"
+    @Published var selectedDay: Int = 1
+    @Published var selectedYear: Int = 2024
+    @Published var isFormValid: Bool = false
+    @Published var isPasswordValid: Bool = false
     @Published var currentUser: UserModel?
     @Published var userSession: User?
     @Published var dataFetched: Bool = false
@@ -31,12 +39,33 @@ class AuthViewModel: ObservableObject {
 //                if success {
 //                    print("User data fetched successfully")
 //                } else if let error = error {
-//                    print("Error fetching user data: \(error.localizedDescription)")
-//                }
-//            }
-//        }
+        //                    print("Error fetching user data: \(error.localizedDescription)")
+        //                }
+        //            }
+        //        }
     }
-    
+
+       func validateForm() {
+           let isUsernameValid = !username.isEmpty
+           isPasswordValid = validatePassword()
+           let isConfirmPasswordValid = !confirmPassword.isEmpty && confirmPassword == password
+           let isDOBValid = selectedMonth != "" && selectedDay != 0 && selectedYear != 0
+
+           isFormValid = isUsernameValid && isPasswordValid && isConfirmPasswordValid && isDOBValid
+           print("isFormValid *************** \(isFormValid)")
+       }
+
+       internal func validatePassword() -> Bool {
+           // Perform password validation checks here
+           let characterSet = CharacterSet(charactersIn: "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ")
+           let containsLettersAndNumbers = password.rangeOfCharacter(from: characterSet) != nil
+           let containsSpecialCharacter = password.rangeOfCharacter(from: CharacterSet(charactersIn: "#$%!@")) != nil
+
+           let isPasswordLengthValid = (8...20).contains(password.count)
+           let isPasswordValid = isPasswordLengthValid && containsLettersAndNumbers && containsSpecialCharacter
+
+           return isPasswordValid
+       }
     
     //email signIn
     func signInUserWithEmail(email: String, password: String, completion: @escaping (Bool, Error?) -> Void) {

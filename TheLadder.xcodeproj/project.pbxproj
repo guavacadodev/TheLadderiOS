@@ -56,6 +56,7 @@
 		1CB469BD2BA3A2E3007E9C59 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 1CB469BC2BA3A2E3007E9C59 /* FirebaseFirestore */; };
 		1CB469BF2BA3A2ED007E9C59 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 1CB469BE2BA3A2ED007E9C59 /* FirebaseDatabase */; };
 		1CB469C12BA3A2F2007E9C59 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 1CB469C02BA3A2F2007E9C59 /* FirebaseStorage */; };
+		80EBE8B02BAF480A00D44CB0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 80EBE8AF2BAF480A00D44CB0 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -92,6 +93,7 @@
 		1CB469B32BA3A167007E9C59 /* phoneAuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = phoneAuthView.swift; sourceTree = "<group>"; };
 		1CB469B52BA3A1B7007E9C59 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		1CB469B72BA3A271007E9C59 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		80EBE8AF2BAF480A00D44CB0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +158,7 @@
 		1CB35FE92B9E718800F30C49 /* TheLadder */ = {
 			isa = PBXGroup;
 			children = (
+				80EBE8AF2BAF480A00D44CB0 /* GoogleService-Info.plist */,
 				1CB360072B9E75B200F30C49 /* Information.plist */,
 				1CB35FEA2B9E718800F30C49 /* TheLadderApp.swift */,
 				1C1AC62D2B9EC0F700367399 /* WelcomeView.swift */,
@@ -371,6 +374,7 @@
 				1CB360082B9E75B200F30C49 /* Information.plist in Resources */,
 				1CB35FF22B9E718A00F30C49 /* Preview Assets.xcassets in Resources */,
 				1CB360062B9E755200F30C49 /* data.json in Resources */,
+				80EBE8B02BAF480A00D44CB0 /* GoogleService-Info.plist in Resources */,
 				1CB469A62BA378F1007E9C59 /* LadderAnimation1.json in Resources */,
 				1CB35FEF2B9E718A00F30C49 /* Assets.xcassets in Resources */,
 			);
@@ -536,10 +540,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TheLadder/Preview Content\"";
-				DEVELOPMENT_TEAM = 54AH6ZQMC2;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -552,8 +556,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.TheLadderPlatform.TheLadder;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Ladder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -565,10 +570,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TheLadder/Preview Content\"";
-				DEVELOPMENT_TEAM = 54AH6ZQMC2;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -581,8 +586,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.TheLadderPlatform.TheLadder;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Ladder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

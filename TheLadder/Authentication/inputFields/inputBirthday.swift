@@ -9,15 +9,21 @@ import SwiftUI
 
 struct inputBirthday: View {
     @Binding var shouldPlayAnimation: Bool
+    @StateObject var viewModel: AuthViewModel
+    @State private var navigateToPhoneAuth = false // Flag to control navigation
+
     var body: some View {
         VStack {
             HStack {
                 Text("When is your birthday?")
-                    .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-                    .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                    .font(.title)
+                    .fontWeight(.bold)
                     .padding(.horizontal)
                 Spacer()
             }
+            .font(.title)
+            .fontWeight(.bold)
+            
             HStack {
                 Text("Please enter your date of birth.")
                     .padding(.leading)
@@ -25,17 +31,25 @@ struct inputBirthday: View {
                     .font(.caption)
                 Spacer()
             }
+            
             UserBirthdayContent()
-            NavigationLink {
-                phoneAuthView()
-            } label: {
+            
+            Button(action: {
+                // Validate the form
+                viewModel.validateForm()
+                
+                // Set the navigation flag to true if the form is valid
+                if viewModel.isFormValid {
+                    navigateToPhoneAuth = true
+                }
+            }) {
                 ZStack {
                     Text("Button To Auth Method")
                         .foregroundColor(.white)
                         .padding()
                         .font(.headline)
                         .frame(maxWidth: .infinity)
-                        .background(.black)
+                        .background(viewModel.isFormValid ? .black : .gray)
                         .cornerRadius(10)
                 }
                 .padding(.horizontal)
@@ -44,8 +58,61 @@ struct inputBirthday: View {
             Spacer()
         }
         .padding(.top, 10)
+        .onChange(of: viewModel.isFormValid) { _ in
+            shouldPlayAnimation = viewModel.isFormValid // Update shouldPlayAnimation based on form validity
+        }
+        // Use NavigationLink with the separate boolean flag
+        .background(
+            NavigationLink(destination: phoneAuthView(), isActive: $navigateToPhoneAuth) {
+                EmptyView()
+            }
+            .hidden()
+        )
     }
 }
+
+//struct inputBirthday: View {
+//    @Binding var shouldPlayAnimation: Bool
+//    @StateObject var viewModel: AuthViewModel
+//    
+//    var body: some View {
+//        VStack {
+//            HStack {
+//                Text("When is your birthday?")
+//                    .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+//                    .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+//                    .padding(.horizontal)
+//                Spacer()
+//            }
+//            HStack {
+//                Text("Please enter your date of birth.")
+//                    .padding(.leading)
+//                    .padding(3)
+//                    .font(.caption)
+//                Spacer()
+//            }
+//            
+//            UserBirthdayContent()
+//            NavigationLink {
+//                phoneAuthView()
+//            } label: {
+//                ZStack {
+//                    Text("Button To Auth Method")
+//                        .foregroundColor(.white)
+//                        .padding()
+//                        .font(.headline)
+//                        .frame(maxWidth: .infinity)
+//                        .background(.black)
+//                        .cornerRadius(10)
+//                }
+//                .padding(.horizontal)
+//            }
+//
+//            Spacer()
+//        }
+//        .padding(.top, 10)
+//    }
+//}
 
 struct UserBirthdayContent: View {
     @State private var selectedMonth: String = "January"

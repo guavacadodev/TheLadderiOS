@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct inputUsername: View {
+    @StateObject var viewModel: AuthViewModel
     @Binding var shouldPlayAnimation: Bool
+    
     var body: some View {
         VStack {
             HStack {
@@ -25,7 +27,10 @@ struct inputUsername: View {
                     .font(.caption)
                 Spacer()
             }
-            InputField(text: .constant(""), placeholder: "-", title: "Username:")
+            InputField(text: $viewModel.username, placeholder: "-", title: "Username:")
+                .onChange(of: viewModel.username) { _ in
+                    viewModel.validateForm()
+                }
             HStack {
                 Spacer()
                 LottieSwipeLeftView(shouldPlay: $shouldPlayAnimation)
