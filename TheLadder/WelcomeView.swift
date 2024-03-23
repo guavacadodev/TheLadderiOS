@@ -99,14 +99,14 @@ struct WelcomeView: View {
                 Group {
                     if loginButtonIsPressed {
                         ZStack {
-                            loginAccountAuthMethods()
+                            AuthMethods(isLogin: true)
                                 .background(Rectangle().clipShape(RoundedRectangle(cornerRadius: 50)).opacity(0.2))
                         }
                         .transition(.move(edge: .bottom).combined(with: .opacity))
                         .animation(.easeInOut(duration: 0.5), value: loginButtonIsPressed)
                     } else if createAccountButtonIsPressed {
                         ZStack {
-                            createAccountAuthMethods()
+                            AuthMethods(isLogin: false)
                                 .background(Rectangle().clipShape(RoundedRectangle(cornerRadius: 50)).opacity(0.2))
                         }
                         .transition(.move(edge: .bottom).combined(with: .opacity))

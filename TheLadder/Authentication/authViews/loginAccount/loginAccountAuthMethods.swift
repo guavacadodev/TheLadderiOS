@@ -28,7 +28,7 @@ struct loginAccountAuthMethods: View {
                                     .foregroundStyle(Color.black)
                             }
                             .scaleEffect(CGSize(width: 0.8, height: 0.8))
-                    }
+                        }
                     }
                     // --- Email Sign In Method --- //
                     VStack {
