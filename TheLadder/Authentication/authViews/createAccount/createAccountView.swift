@@ -7,16 +7,26 @@
 
 import SwiftUI
 
+enum SignInType {
+    case email
+    case phone
+    case google
+    case facebook
+    case twitter
+}
+
 struct createAccountView: View {
     @Environment(\.presentationMode) var presentationMode
     @State private var shouldPlayAnimation = true
     @StateObject var viewModel = AuthViewModel()
+    var signInType: SignInType = .phone
+    
     var body: some View {
         TabView {
             inputUsername(viewModel: viewModel, shouldPlayAnimation: $shouldPlayAnimation)
             inputPassword(shouldPlayAnimation: $shouldPlayAnimation, viewModel: viewModel)
             inputPasswordConfirm(viewModel: viewModel, shouldPlayAnimation: $shouldPlayAnimation)
-            inputBirthday(shouldPlayAnimation: $shouldPlayAnimation, viewModel: viewModel)
+            inputBirthday(shouldPlayAnimation: $shouldPlayAnimation, viewModel: viewModel, signInType: signInType)
         }
         .tabViewStyle(PageTabViewStyle())
         .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))

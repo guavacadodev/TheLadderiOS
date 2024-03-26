@@ -10,6 +10,10 @@ import SwiftUI
 struct emailAuthView: View {
     @State private var passcode: String = ""
     @State private var emailAddress: String = ""
+    var isLogin = false
+    
+    @EnvironmentObject var viewModel: AuthViewModel
+    
     var body: some View {
         ScrollView {
             VStack {
@@ -19,7 +23,41 @@ struct emailAuthView: View {
                 
                 InputField(text: $emailAddress, isSecureField: false, placeholder: "-", title: "Email:", contentType: .emailAddress)
                 
-                InputField(text: $passcode, isSecureField: false, placeholder: "-", title: "Code:", contentType: .emailAddress)
+                if isLogin {
+                    InputField(text: $passcode, isSecureField: false, placeholder: "-", title: "PassCode:", contentType: .emailAddress)
+                }
+                
+                Button {
+                    if isLogin {
+                        if emailAddress.trimmingCharacters(in: .whitespacesAndNewlines) != "" && passcode.trimmingCharacters(in: .whitespacesAndNewlines) != "" {
+                            Task {
+                                viewModel.signInUserWithEmail(email: emailAddress, password: passcode) { success, error in
+                                    if success {
+                                        
+                                    } else if let error = error {
+                                        
+                                    }
+                                }
+                            }
+                        }
+                    } else {
+                        if emailAddress.trimmingCharacters(in: .whitespacesAndNewlines) != "" {
+                            Task {
+                                try await viewModel.createUserWithEmail(email: emailAddress, password: viewModel.password, username: viewModel.username, dob: viewModel.dateOfBirth)
+                            }
+                        }
+                    }
+                } label: {
+                    Text(isLogin ? "Login" : "Create Account")
+                        .foregroundColor(.white)
+                        .padding()
+                        .font(.headline)
+                        .frame(maxWidth: .infinity)
+                        .background(.black)
+                        .cornerRadius(10)
+                }
+                .padding(.horizontal)
+                
                 
             }
         }

@@ -10,6 +10,8 @@ import Firebase
 
 @main
 struct TheLadderApp: App {
+    @StateObject var viewModel = AuthViewModel()
+    
     init() {
         FirebaseApp.configure()
     }
@@ -17,6 +19,7 @@ struct TheLadderApp: App {
     var body: some Scene {
         WindowGroup {
             WelcomeView()
+                .environmentObject(viewModel)
         }
     }
 }

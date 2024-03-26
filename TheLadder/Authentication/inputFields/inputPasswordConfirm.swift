@@ -29,8 +29,8 @@ struct inputPasswordConfirm: View {
             }
             InputField(text: $viewModel.confirmPassword, placeholder: "-", title: "Password:")
                 .onChange(of: viewModel.confirmPassword) { _ in
-                                   viewModel.validateForm()
-                               }
+                    viewModel.validateForm()
+                }
             HStack {
                 Spacer()
                 LottieSwipeLeftView(shouldPlay: $shouldPlayAnimation)

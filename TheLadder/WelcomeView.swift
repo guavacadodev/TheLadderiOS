@@ -12,6 +12,8 @@ struct WelcomeView: View {
     @State var loginButtonIsPressed: Bool = false
     @State var createAccountButtonIsPressed: Bool = false
     @State private var activeAnimationIndex = 0
+    @EnvironmentObject var viewModel: AuthViewModel
+    
     let timer = Timer.publish(every: 5, on: .main, in: .common).autoconnect()
     
     var ladderImageName: String {
@@ -67,7 +69,8 @@ struct WelcomeView: View {
                 
                 Button(action: {
                     withAnimation {
-                        loginButtonIsPressed.toggle()
+                        loginButtonIsPressed = true
+                        createAccountButtonIsPressed = false
                     }
                 }) {
                     RoundedRectangle(cornerRadius: 25.0)
@@ -82,7 +85,8 @@ struct WelcomeView: View {
                 
                 Button(action: {
                     withAnimation {
-                        createAccountButtonIsPressed.toggle()
+                        createAccountButtonIsPressed = true
+                        loginButtonIsPressed = false
                     }
                 }) {
                     RoundedRectangle(cornerRadius: 25.0)

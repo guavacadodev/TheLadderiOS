@@ -28,5 +28,6 @@ struct UserModel: Identifiable, Codable {
     var id: String
     var fullName: String
     var email: String
+    var dob: String
     var contact: String
 }

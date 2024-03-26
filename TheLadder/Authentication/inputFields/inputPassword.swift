@@ -33,6 +33,8 @@ struct inputPassword: View {
             
             InputField(text: $viewModel.password, placeholder: "-", title: "Password:")
                 .onChange(of: viewModel.password) { newValue in
+                        viewModel.password = newValue
+                        print("********\(viewModel.password)")
                     viewModel.isPasswordValid = viewModel.validatePassword() // Update isPasswordValid property
                     viewModel.validateForm() // Validate the entire form
                 }

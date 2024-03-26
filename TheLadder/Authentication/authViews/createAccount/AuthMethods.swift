@@ -19,8 +19,8 @@ struct AuthMethods: View {
                         if isLogin {
                             phoneAuthView()
                         } else {
-                            createAccountView()
-                            phoneAuthView()
+                            createAccountView(signInType: .phone)
+                            //phoneAuthView()
                         }
                         
                     } label: {
@@ -42,10 +42,10 @@ struct AuthMethods: View {
                 VStack {
                     NavigationLink {
                         if isLogin {
-                            emailAuthView()
+                            emailAuthView(isLogin: true)
                         } else {
-                            createAccountView()
-                            emailAuthView()
+                            createAccountView(signInType: .email)
+                            //emailAuthView()
                         }
                         
                     } label: {
@@ -69,8 +69,8 @@ struct AuthMethods: View {
                         if isLogin {
                             loginAccountFacebookView()
                         } else {
-                            createAccountView()
-                            loginAccountFacebookView()
+                            createAccountView(signInType: .facebook)
+                            //loginAccountFacebookView()
                         }
                         
                     } label: {
@@ -97,8 +97,8 @@ struct AuthMethods: View {
                         if isLogin {
                             loginAccountGoogleView()
                         } else {
-                            createAccountView()
-                            loginAccountGoogleView()
+                            createAccountView(signInType: .google)
+                            //loginAccountGoogleView()
                         }
                     } label: {
                         ZStack {
@@ -124,8 +124,8 @@ struct AuthMethods: View {
                         if isLogin {
                             loginAccountXView()
                         } else {
-                            createAccountView()
-                            loginAccountXView()
+                            createAccountView(signInType: .twitter)
+                            //loginAccountXView()
                         }
                     } label: {
                         ZStack {

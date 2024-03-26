@@ -55,6 +55,7 @@
 		1CB469BD2BA3A2E3007E9C59 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 1CB469BC2BA3A2E3007E9C59 /* FirebaseFirestore */; };
 		1CB469BF2BA3A2ED007E9C59 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 1CB469BE2BA3A2ED007E9C59 /* FirebaseDatabase */; };
 		1CB469C12BA3A2F2007E9C59 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 1CB469C02BA3A2F2007E9C59 /* FirebaseStorage */; };
+		80DDEB772BB31E21004B3F86 /* ProfileVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DDEB762BB31E21004B3F86 /* ProfileVIew.swift */; };
 		80EBE8B02BAF480A00D44CB0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 80EBE8AF2BAF480A00D44CB0 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
@@ -91,6 +92,7 @@
 		1CB469B32BA3A167007E9C59 /* phoneAuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = phoneAuthView.swift; sourceTree = "<group>"; };
 		1CB469B52BA3A1B7007E9C59 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		1CB469B72BA3A271007E9C59 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		80DDEB762BB31E21004B3F86 /* ProfileVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVIew.swift; sourceTree = "<group>"; };
 		80EBE8AF2BAF480A00D44CB0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -132,6 +134,7 @@
 				1CB469862BA0F003007E9C59 /* xAuth */,
 				1CB469852BA0EFE7007E9C59 /* emailAuth */,
 				1CB469842BA0EF04007E9C59 /* phoneAuth */,
+				80DDEB752BB31E01004B3F86 /* ProfileView */,
 			);
 			path = authViews;
 			sourceTree = "<group>";
@@ -281,6 +284,14 @@
 			path = loginAccount;
 			sourceTree = "<group>";
 		};
+		80DDEB752BB31E01004B3F86 /* ProfileView */ = {
+			isa = PBXGroup;
+			children = (
+				80DDEB762BB31E21004B3F86 /* ProfileVIew.swift */,
+			);
+			path = ProfileView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -402,6 +413,7 @@
 				1CB469812BA0EED2007E9C59 /* createAccountView.swift in Sources */,
 				1CB469B62BA3A1B7007E9C59 /* AuthViewModel.swift in Sources */,
 				1CB3603B2B9EB57F00F30C49 /* loginAccountFacebookView.swift in Sources */,
+				80DDEB772BB31E21004B3F86 /* ProfileVIew.swift in Sources */,
 				1CB4699E2BA24FF6007E9C59 /* inputUsername.swift in Sources */,
 				1CB35FEB2B9E718800F30C49 /* TheLadderApp.swift in Sources */,
 				1CB469A02BA25182007E9C59 /* inputPassword.swift in Sources */,

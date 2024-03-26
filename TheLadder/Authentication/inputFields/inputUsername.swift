@@ -28,7 +28,9 @@ struct inputUsername: View {
                 Spacer()
             }
             InputField(text: $viewModel.username, placeholder: "-", title: "Username:")
-                .onChange(of: viewModel.username) { _ in
+                .onChange(of: viewModel.username) { name in
+                    viewModel.username = name
+                    print("********\(viewModel.username)")
                     viewModel.validateForm()
                 }
             HStack {

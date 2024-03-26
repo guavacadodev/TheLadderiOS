@@ -11,7 +11,23 @@ struct inputBirthday: View {
     @Binding var shouldPlayAnimation: Bool
     @StateObject var viewModel: AuthViewModel
     @State private var navigateToPhoneAuth = false // Flag to control navigation
+    var signInType: SignInType = .phone
 
+    func destinationView(for signInType: SignInType) -> AnyView {
+        switch signInType {
+        case .email:
+            return AnyView(emailAuthView())
+        case .phone:
+            return AnyView(phoneAuthView())
+        case .google:
+            return AnyView(loginAccountGoogleView())
+        case .facebook:
+            return AnyView(loginAccountFacebookView())
+        case .twitter:
+            return AnyView(loginAccountXView())
+        }
+    }
+    
     var body: some View {
         VStack {
             HStack {
@@ -63,7 +79,7 @@ struct inputBirthday: View {
         }
         // Use NavigationLink with the separate boolean flag
         .background(
-            NavigationLink(destination: phoneAuthView(), isActive: $navigateToPhoneAuth) {
+            NavigationLink(destination: destinationView(for: signInType), isActive: $navigateToPhoneAuth) {
                 EmptyView()
             }
             .hidden()
@@ -71,57 +87,14 @@ struct inputBirthday: View {
     }
 }
 
-//struct inputBirthday: View {
-//    @Binding var shouldPlayAnimation: Bool
-//    @StateObject var viewModel: AuthViewModel
-//    
-//    var body: some View {
-//        VStack {
-//            HStack {
-//                Text("When is your birthday?")
-//                    .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
-//                    .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-//                    .padding(.horizontal)
-//                Spacer()
-//            }
-//            HStack {
-//                Text("Please enter your date of birth.")
-//                    .padding(.leading)
-//                    .padding(3)
-//                    .font(.caption)
-//                Spacer()
-//            }
-//            
-//            UserBirthdayContent()
-//            NavigationLink {
-//                phoneAuthView()
-//            } label: {
-//                ZStack {
-//                    Text("Button To Auth Method")
-//                        .foregroundColor(.white)
-//                        .padding()
-//                        .font(.headline)
-//                        .frame(maxWidth: .infinity)
-//                        .background(.black)
-//                        .cornerRadius(10)
-//                }
-//                .padding(.horizontal)
-//            }
-//
-//            Spacer()
-//        }
-//        .padding(.top, 10)
-//    }
-//}
-
 struct UserBirthdayContent: View {
-    @State private var selectedMonth: String = "January"
-    @State private var selectedDay: Int = 1
-    @State private var selectedYear: Int = 2024
-
+    @State private var selectedMonth: String = "March"
+    @State private var selectedDay: Int = 3
+    @State private var selectedYear: Int = 2023
+    
     var body: some View {
         VStack {
-            birthdaySelectedText(selectedDay: $selectedDay, selectedMonth: $selectedMonth, selectedYear: $selectedYear)
+            birthdaySelectedText(selectedDay: $selectedDay, selectedMonth: $selectedMonth, selectedYear: $selectedYear, viewModel: AuthViewModel())
             birthdaySelectorView(selectedDay: $selectedDay, selectedMonth: $selectedMonth, selectedYear: $selectedYear)
         }
     }
@@ -131,9 +104,10 @@ struct birthdaySelectedText: View {
     @Binding var selectedDay: Int
     @Binding var selectedMonth: String
     @Binding var selectedYear: Int
+    @StateObject var viewModel: AuthViewModel
     
     var body: some View {
-        let dateString = "\(selectedMonth) \(selectedDay) \(selectedYear)"
+        let dateString = "\(selectedMonth) \(selectedDay), \(selectedYear)"
         VStack(alignment: .leading) {
             VStack {
                 HStack {
@@ -159,6 +133,10 @@ struct birthdaySelectedText: View {
             .padding(.horizontal)
             Divider()
             
+        }
+        .onChange(of: dateString) { newDateString in
+            // Update viewModel.dateOfBirth whenever dateString changes
+            viewModel.dateOfBirth = newDateString           
         }
     }
 }

@@ -17,9 +17,7 @@ class AuthViewModel: ObservableObject {
     @Published var username: String = ""
     @Published var password: String = ""
     @Published var confirmPassword: String = ""
-    @Published var selectedMonth: String = "January"
-    @Published var selectedDay: Int = 1
-    @Published var selectedYear: Int = 2024
+    @Published var dateOfBirth: String = "March 2 2013"
     @Published var isFormValid: Bool = false
     @Published var isPasswordValid: Bool = false
     @Published var currentUser: UserModel?
@@ -49,7 +47,7 @@ class AuthViewModel: ObservableObject {
            let isUsernameValid = !username.isEmpty
            isPasswordValid = validatePassword()
            let isConfirmPasswordValid = !confirmPassword.isEmpty && confirmPassword == password
-           let isDOBValid = selectedMonth != "" && selectedDay != 0 && selectedYear != 0
+           let isDOBValid = dateOfBirth != ""
 
            isFormValid = isUsernameValid && isPasswordValid && isConfirmPasswordValid && isDOBValid
            print("isFormValid *************** \(isFormValid)")
@@ -117,7 +115,7 @@ class AuthViewModel: ObservableObject {
                             // Additional actions after Firebase authentication
                             let userData = UserModel(id: authResult?.user.uid ?? "...",
                                                      fullName: authResult?.user.displayName ?? "...",
-                                                     email: authResult?.user.email ?? "...",
+                                                     email: authResult?.user.email ?? "...", dob: "",
                                                      contact: authResult?.user.phoneNumber ?? "...")
                             
                             self.userSession = authResult?.user
@@ -157,7 +155,7 @@ class AuthViewModel: ObservableObject {
         }
     }
     
-    func signInWithGoogle() async throws {
+    func signInWithGoogle(password: String, username: String, dob: String) async throws {
         guard let clientID = FirebaseApp.app()?.options.clientID else { return }
                 
         let config = GIDConfiguration(clientID: clientID)
@@ -174,7 +172,7 @@ class AuthViewModel: ObservableObject {
             
             do {
                 let authResult = try await Auth.auth().signIn(with: credential)
-                let userData = UserModel(id: authResult.user.uid, fullName: authResult.user.displayName ?? "...", email: authResult.user.email ?? "...", contact: authResult.user.phoneNumber ?? "...")
+                let userData = UserModel(id: authResult.user.uid, fullName: authResult.user.displayName ?? "...", email: authResult.user.email ?? "...", dob: dob, contact: authResult.user.phoneNumber ?? "...")
                 
                 self.userSession = authResult.user
                 let encodedData = try Firestore.Encoder().encode(userData)
@@ -224,10 +222,10 @@ class AuthViewModel: ObservableObject {
     }
 
     //create User With Email
-    func createUserWithEmail(email: String, password: String, username: String) async throws {
+    func createUserWithEmail(email: String, password: String, username: String, dob: String) async throws {
         do {
             let result = try await Auth.auth().createUser(withEmail: email, password: password)
-            let userData = UserModel(id: result.user.uid, fullName: username, email: email, contact: "")
+            let userData = UserModel(id: result.user.uid, fullName: username, email: email, dob: dob, contact: "")
             self.userSession = result.user
             let encodedData = try Firestore.Encoder().encode(userData)
             try await Firestore.firestore().collection("users").document(userData.id).setData(encodedData)
@@ -269,7 +267,7 @@ class AuthViewModel: ObservableObject {
                 completion(.failure(error))
             } else {
                 completion(.success("User authenticated successfully"))
-                let userData = UserModel(id: authResult?.user.uid ?? "...", fullName: authResult?.user.displayName ?? "...", email: authResult?.user.email ?? "...", contact: authResult?.user.phoneNumber ?? "...")
+                let userData = UserModel(id: authResult?.user.uid ?? "...", fullName: authResult?.user.displayName ?? "...", email: authResult?.user.email ?? "...", dob: "", contact: authResult?.user.phoneNumber ?? "...")
                 self.userSession = authResult?.user
                 do {
                     let encodedData = try Firestore.Encoder().encode(userData)
