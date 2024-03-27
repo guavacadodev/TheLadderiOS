@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct inputPasswordConfirm: View {
-    @StateObject var viewModel: AuthViewModel
+    @ObservedObject var viewModel: AuthViewModel
     @Binding var shouldPlayAnimation: Bool
     
     var body: some View {

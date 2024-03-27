@@ -27,6 +27,10 @@ class AuthViewModel: ObservableObject {
     @Published var isFacebookSignInSuccessfull: Bool = false
     @Published var isTwitterSignInSuccessfull: Bool = false
     
+    var userNameString = ""
+    var finalPassword = ""
+    var dob = ""
+
     static let shared = AuthViewModel()
     
     init() {

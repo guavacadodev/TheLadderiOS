@@ -43,7 +43,10 @@ struct emailAuthView: View {
                     } else {
                         if emailAddress.trimmingCharacters(in: .whitespacesAndNewlines) != "" {
                             Task {
-                                try await viewModel.createUserWithEmail(email: emailAddress, password: viewModel.password, username: viewModel.username, dob: viewModel.dateOfBirth)
+                                let userName = defaults.string(forKey: "user_name")
+                                let dob = defaults.string(forKey: "user_birthday")
+                                let userPassword = defaults.string(forKey: "user_password")
+                                try await viewModel.createUserWithEmail(email: emailAddress, password: userPassword ?? "", username: userName ?? "", dob: dob ?? "")
                             }
                         }
                     }

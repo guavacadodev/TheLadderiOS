@@ -9,7 +9,7 @@ import SwiftUI
 
 struct inputBirthday: View {
     @Binding var shouldPlayAnimation: Bool
-    @StateObject var viewModel: AuthViewModel
+    @ObservedObject var viewModel: AuthViewModel
     @State private var navigateToPhoneAuth = false // Flag to control navigation
     var signInType: SignInType = .phone
 
@@ -136,7 +136,9 @@ struct birthdaySelectedText: View {
         }
         .onChange(of: dateString) { newDateString in
             // Update viewModel.dateOfBirth whenever dateString changes
-            viewModel.dateOfBirth = newDateString           
+            defaults.set(newDateString, forKey: "user_birthday")
+            viewModel.dateOfBirth = newDateString
+            viewModel.dob = newDateString
         }
     }
 }

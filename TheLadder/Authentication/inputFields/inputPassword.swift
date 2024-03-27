@@ -9,7 +9,7 @@ import SwiftUI
 
 struct inputPassword: View {
     @Binding var shouldPlayAnimation: Bool
-    @StateObject var viewModel: AuthViewModel
+    @ObservedObject var viewModel: AuthViewModel
 
     var body: some View {
         VStack {
@@ -33,8 +33,8 @@ struct inputPassword: View {
             
             InputField(text: $viewModel.password, placeholder: "-", title: "Password:")
                 .onChange(of: viewModel.password) { newValue in
-                        viewModel.password = newValue
-                        print("********\(viewModel.password)")
+                    print("********\(viewModel.password)")
+                    defaults.set(viewModel.password, forKey: "user_password")
                     viewModel.isPasswordValid = viewModel.validatePassword() // Update isPasswordValid property
                     viewModel.validateForm() // Validate the entire form
                 }

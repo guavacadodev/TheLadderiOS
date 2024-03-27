@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct inputUsername: View {
-    @StateObject var viewModel: AuthViewModel
+    @ObservedObject var viewModel: AuthViewModel
     @Binding var shouldPlayAnimation: Bool
     
     var body: some View {
@@ -29,8 +29,9 @@ struct inputUsername: View {
             }
             InputField(text: $viewModel.username, placeholder: "-", title: "Username:")
                 .onChange(of: viewModel.username) { name in
-                    viewModel.username = name
+                   // viewModel.username = name
                     print("********\(viewModel.username)")
+                    defaults.set(viewModel.username, forKey: "user_name")
                     viewModel.validateForm()
                 }
             HStack {

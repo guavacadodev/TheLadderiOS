@@ -57,6 +57,7 @@
 		1CB469C12BA3A2F2007E9C59 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 1CB469C02BA3A2F2007E9C59 /* FirebaseStorage */; };
 		80DDEB772BB31E21004B3F86 /* ProfileVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DDEB762BB31E21004B3F86 /* ProfileVIew.swift */; };
 		80EBE8B02BAF480A00D44CB0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 80EBE8AF2BAF480A00D44CB0 /* GoogleService-Info.plist */; };
+		80F03E952BB47CAB00FCC8C5 /* FirstView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F03E942BB47CAB00FCC8C5 /* FirstView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -94,6 +95,7 @@
 		1CB469B72BA3A271007E9C59 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		80DDEB762BB31E21004B3F86 /* ProfileVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVIew.swift; sourceTree = "<group>"; };
 		80EBE8AF2BAF480A00D44CB0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		80F03E942BB47CAB00FCC8C5 /* FirstView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +164,7 @@
 				80EBE8AF2BAF480A00D44CB0 /* GoogleService-Info.plist */,
 				1CB360072B9E75B200F30C49 /* Information.plist */,
 				1CB35FEA2B9E718800F30C49 /* TheLadderApp.swift */,
+				80F03E942BB47CAB00FCC8C5 /* FirstView.swift */,
 				1C1AC62D2B9EC0F700367399 /* WelcomeView.swift */,
 				1CB4697A2B9FEF17007E9C59 /* InputField.swift */,
 				1CB4698B2BA0F938007E9C59 /* Authentication */,
@@ -408,6 +411,7 @@
 				1CB3603F2B9EB6AC00F30C49 /* loginAccountXView.swift in Sources */,
 				1C1AC62E2B9EC0F700367399 /* WelcomeView.swift in Sources */,
 				1CB3603D2B9EB6A100F30C49 /* loginAccountGoogleView.swift in Sources */,
+				80F03E952BB47CAB00FCC8C5 /* FirstView.swift in Sources */,
 				1CB4698A2BA0F900007E9C59 /* AuthMethods.swift in Sources */,
 				1CB35FF92B9E719D00F30C49 /* LadderAnimation1.swift in Sources */,
 				1CB469812BA0EED2007E9C59 /* createAccountView.swift in Sources */,

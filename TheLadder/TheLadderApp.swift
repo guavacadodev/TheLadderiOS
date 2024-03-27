@@ -8,6 +8,8 @@
 import SwiftUI
 import Firebase
 
+let defaults = UserDefaults.standard
+
 @main
 struct TheLadderApp: App {
     @StateObject var viewModel = AuthViewModel()
@@ -18,7 +20,7 @@ struct TheLadderApp: App {
     
     var body: some Scene {
         WindowGroup {
-            WelcomeView()
+            FirstView()
                 .environmentObject(viewModel)
         }
     }
