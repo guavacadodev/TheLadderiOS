@@ -55,6 +55,7 @@
 		1CB469BD2BA3A2E3007E9C59 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 1CB469BC2BA3A2E3007E9C59 /* FirebaseFirestore */; };
 		1CB469BF2BA3A2ED007E9C59 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 1CB469BE2BA3A2ED007E9C59 /* FirebaseDatabase */; };
 		1CB469C12BA3A2F2007E9C59 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 1CB469C02BA3A2F2007E9C59 /* FirebaseStorage */; };
+		80006DE72BB5BD3C00E3E3B4 /* Appdelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80006DE62BB5BD3C00E3E3B4 /* Appdelegate.swift */; };
 		80DDEB772BB31E21004B3F86 /* ProfileVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DDEB762BB31E21004B3F86 /* ProfileVIew.swift */; };
 		80EBE8B02BAF480A00D44CB0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 80EBE8AF2BAF480A00D44CB0 /* GoogleService-Info.plist */; };
 		80F03E952BB47CAB00FCC8C5 /* FirstView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F03E942BB47CAB00FCC8C5 /* FirstView.swift */; };
@@ -93,9 +94,12 @@
 		1CB469B32BA3A167007E9C59 /* phoneAuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = phoneAuthView.swift; sourceTree = "<group>"; };
 		1CB469B52BA3A1B7007E9C59 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		1CB469B72BA3A271007E9C59 /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		80006DE52BB5B20C00E3E3B4 /* TheLadder.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TheLadder.entitlements; sourceTree = "<group>"; };
+		80006DE62BB5BD3C00E3E3B4 /* Appdelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Appdelegate.swift; sourceTree = "<group>"; };
 		80DDEB762BB31E21004B3F86 /* ProfileVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVIew.swift; sourceTree = "<group>"; };
 		80EBE8AF2BAF480A00D44CB0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		80F03E942BB47CAB00FCC8C5 /* FirstView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstView.swift; sourceTree = "<group>"; };
+		80F03E962BB4879400FCC8C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,8 +165,11 @@
 		1CB35FE92B9E718800F30C49 /* TheLadder */ = {
 			isa = PBXGroup;
 			children = (
+				80006DE52BB5B20C00E3E3B4 /* TheLadder.entitlements */,
+				80F03E962BB4879400FCC8C5 /* Info.plist */,
 				80EBE8AF2BAF480A00D44CB0 /* GoogleService-Info.plist */,
 				1CB360072B9E75B200F30C49 /* Information.plist */,
+				80006DE62BB5BD3C00E3E3B4 /* Appdelegate.swift */,
 				1CB35FEA2B9E718800F30C49 /* TheLadderApp.swift */,
 				80F03E942BB47CAB00FCC8C5 /* FirstView.swift */,
 				1C1AC62D2B9EC0F700367399 /* WelcomeView.swift */,
@@ -400,6 +407,7 @@
 			files = (
 				1CB4697B2B9FEF17007E9C59 /* InputField.swift in Sources */,
 				1CB4699B2BA24E4D007E9C59 /* inputBirthday.swift in Sources */,
+				80006DE72BB5BD3C00E3E3B4 /* Appdelegate.swift in Sources */,
 				1CB360392B9EAFD300F30C49 /* loginAccountEmailView.swift in Sources */,
 				1CB469A22BA251B9007E9C59 /* inputPasswordConfirm.swift in Sources */,
 				1CB469832BA0EEE2007E9C59 /* emailAuthView.swift in Sources */,
@@ -552,12 +560,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = TheLadder/TheLadder.entitlements;
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TheLadder/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TheLadder/Information.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -582,12 +592,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = TheLadder/TheLadder.entitlements;
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TheLadder/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TheLadder/Information.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

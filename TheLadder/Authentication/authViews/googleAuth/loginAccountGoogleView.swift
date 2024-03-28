@@ -8,8 +8,29 @@
 import SwiftUI
 
 struct loginAccountGoogleView: View {
+    @EnvironmentObject var viewModel: AuthViewModel
+    
     var body: some View {
-        Text("Google Login / Account creation page, assuming the process is the same.")
+        Button {
+            viewModel.isGoogleSignInSuccessfull = false
+            viewModel.isFacebookSignInSuccessfull = false
+            Task {
+                let userName = defaults.string(forKey: "user_name")
+                let dob = defaults.string(forKey: "user_birthday")
+                let userPassword = defaults.string(forKey: "user_password")
+                try await viewModel.signInWithGoogle(password: userPassword ?? "", username: userName ?? "", dob: dob ?? "")
+            }
+        } label: {
+            Text("Login with Google")
+                .foregroundColor(.white)
+                .padding()
+                .font(.headline)
+                .frame(maxWidth: .infinity)
+                .background(.red1)
+                .cornerRadius(10)
+        }
+        .padding()
+        .background(NavigationLink("", destination: ProfileView(), isActive: $viewModel.isGoogleSignInSuccessfull))
     }
 }
 
